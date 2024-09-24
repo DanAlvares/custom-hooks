@@ -1,3 +1,4 @@
+import UseFetchDemo from './hooks/useFetch/useFetchDemo';
 import UseDebounceDemo from './hooks/useDebounce/useDebounceDemo';
 import LocalStorageDemo from './hooks/useLocalStorage/useLocalStorageDemo';
 import UseClickOutsideDemo from './hooks/useClickOutside/useClickOutsideDemo';
@@ -23,7 +24,9 @@ function App() {
             <section className="hook-demo">
               <UseDebounceDemo />
             </section>
-            <section className="hook-demo"></section>
+            <section className="hook-demo">
+              <UseFetchDemo />
+            </section>
           </div>
         </div>
       </main>
@@ -32,3 +35,9 @@ function App() {
 }
 
 export default App;
+// useIdle
+// useClipboard
+// useBeforeUnload
+// useDeviceMotion
+// useResizeObserver
+// useIntersectionObserver

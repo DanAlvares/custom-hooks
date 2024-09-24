@@ -11,8 +11,10 @@ A collection of custom React hooks, each with a demo component and fully tested.
 1. [Introduction](#introduction)
 2. [Installation](#installation)
 3. [Available Hooks](#available-hooks)
-   - [useLocalStorage](#uselocalstorage)
    - [useClickOutside](#useclickoutside)
+   - [useFetch](#usefetch)
+   - [useLocalStorage](#uselocalstorage)
+   - [useLocalStorage](#uselocalstorage)
 4. [Usage](#usage)
 5. [Running the Project](#running-the-project)
 6. [Testing](#testing)
@@ -51,6 +53,16 @@ The `useClickOutside` hook allows for detecting clicks outside a specified eleme
 
 ```typescript
 useClickOutside(ref: RefObject<HTMLElement>, callback: (event: MouseEvent) => void)
+```
+
+### useFetch
+
+The `useFetch` hook provides a simple way to fetch data from an API. It handles loading states, errors, and successful data fetching.
+
+#### Usage:
+
+```typescript
+const { data, loading, error } = useFetch<T>(url: string)
 ```
 
 ## Usage

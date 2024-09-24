@@ -25,4 +25,20 @@ describe('LocalStorageDemo', () => {
     expect(screen.getByText('Stored Name: John Doe')).toBeInTheDocument();
     expect(screen.getByText('Stored Age: 30')).toBeInTheDocument();
   });
+
+  it('loads the stored values from localStorage', () => {
+    localStorage.setItem('name', JSON.stringify('Jane Doe'));
+    localStorage.setItem('age', JSON.stringify(25));
+
+    render(<LocalStorageDemo />);
+
+    const nameInput = screen.getByLabelText('Name:') as HTMLInputElement;
+    const ageInput = screen.getByLabelText('Age:') as HTMLInputElement;
+
+    expect(nameInput.value).toBe('Jane Doe');
+    expect(ageInput.value).toBe('25');
+
+    expect(screen.getByText('Stored Name: Jane Doe')).toBeInTheDocument();
+    expect(screen.getByText('Stored Age: 25')).toBeInTheDocument();
+  });
 });
