@@ -1,10 +1,6 @@
 import LocalStorageDemo from './hooks/useLocalStorage/useLocalStorageDemo';
+import UseClickOutsideDemo from './hooks/useClickOutside/useClickOutsideDemo';
 import './App.css';
-
-// Import other custom hook demos here
-// import UseClickOutsideDemo from './hooks/useClickOutside/useClickOutsideDemo';
-// import UseDataDemo from './hooks/useData/useDataDemo';
-// ... import other demos
 
 function App() {
   return (
@@ -20,9 +16,10 @@ function App() {
             <section className="hook-demo">
               <LocalStorageDemo />
             </section>
-
-            <section className="hook-demo">{/* <UseClickOutsideDemo /> */}</section>
-            <section className="hook-demo">{/* <UseDataDemo /> */}</section>
+            <section className="hook-demo">
+              <UseClickOutsideDemo />
+            </section>
+            <section className="hook-demo"></section>
           </div>
         </div>
       </main>

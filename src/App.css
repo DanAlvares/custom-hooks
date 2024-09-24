@@ -4,12 +4,6 @@ body {
   font-family: monospace;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 header {
   background-color: #282c34;
   color: white;
@@ -21,8 +15,19 @@ h1 {
   font-size: 2.5rem;
 }
 
+h2 {
+  margin-top: 0;
+  color: #333;
+}
+
 main {
   padding: 40px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .hooks-grid {
@@ -38,8 +43,13 @@ main {
   box-shadow: 2px 2px 7px #ddd;
   border: solid 1px #ccc;
 }
-
-h2 {
-  margin-top: 0;
-  color: #333;
+.hook-demo:empty::before {
+  content: 'COMING SOON...';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  color: #aaa;
+  font-size: 22px;
 }
