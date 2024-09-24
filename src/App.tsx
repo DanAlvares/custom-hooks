@@ -1,3 +1,4 @@
+import UseDebounceDemo from './hooks/useDebounce/useDebounceDemo';
 import LocalStorageDemo from './hooks/useLocalStorage/useLocalStorageDemo';
 import UseClickOutsideDemo from './hooks/useClickOutside/useClickOutsideDemo';
 import './App.css';
@@ -18,6 +19,9 @@ function App() {
             </section>
             <section className="hook-demo">
               <UseClickOutsideDemo />
+            </section>
+            <section className="hook-demo">
+              <UseDebounceDemo />
             </section>
             <section className="hook-demo"></section>
           </div>
