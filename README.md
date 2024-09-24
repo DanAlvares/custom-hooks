@@ -1,50 +1,76 @@
-# React + TypeScript + Vite
+# Custom Hooks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A collection of custom React hooks. Each with a demo component and fully tested
 
-Currently, two official plugins are available:
+# Custom React Hooks
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A collection of custom React hooks, each with a demo component and fully tested.
 
-## Expanding the ESLint configuration
+## Table of Contents
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. [Introduction](#introduction)
+2. [Installation](#installation)
+3. [Available Hooks](#available-hooks)
+   - [useLocalStorage](#uselocalstorage)
+   - [useClickOutside](#useclickoutside)
+4. [Usage](#usage)
+5. [Running the Project](#running-the-project)
+6. [Testing](#testing)
 
-- Configure the top-level `parserOptions` property like this:
+## Introduction
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+This project showcases a collection of custom React hooks that can be used to enhance a React application. Each hook is designed to solve a specific problem and comes with a demo component to illustrate its usage.
+
+## Installation
+
+Clone this repo and install the dependencies and/or copy them to your vite repo:
+
+```bash
+git clone https://github.com/your-username/custom-react-hooks.git
+cd custom-react-hooks
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Available Hooks
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### useLocalStorage
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+The `useLocalStorage` hook provides a way to easily store and retrieve data from the browser's localStorage. It works similarly to the `useState` hook but persists the data in localStorage.
+
+#### Usage:
+
+```typescript
+const [value, setValue] = useLocalStorage<T>(key: string, initialValue: T)
+```
+
+### useClickOutside
+
+The `useClickOutside` hook allows for detecting clicks outside a specified element. This is useful for implementing dropdown menus, modals, or any component that should close when clicking outside.
+
+#### Usage:
+
+```typescript
+useClickOutside(ref: RefObject<HTMLElement>, callback: (event: MouseEvent) => void)
+```
+
+## Usage
+
+Each hook has a corresponding demo component in the `src/hooks` directory. Refer to the demos for examples of how to use the hooks in components.
+
+## Running the Project
+
+To run the project locally:
+
+```bash
+npm run dev
+```
+
+This will start the development server, and you can view the demo app at `http://localhost:5173`.
+
+## Testing
+
+This project uses Vitest for testing. To run the tests:
+
+```bash
+npm test
 ```
