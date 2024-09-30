@@ -7,7 +7,6 @@ const LocalStorageDemo: React.FC = () => {
 
   return (
     <div>
-      <h2>LocalStorage Demo</h2>
       <div>
         <label htmlFor="name">Name: </label>
         <input id="name" value={name} onChange={(e) => setName(e.target.value)} />

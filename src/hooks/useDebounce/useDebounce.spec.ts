@@ -1,5 +1,5 @@
-import { renderHook, act } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { act, renderHook } from '@testing-library/react';
+import { vi } from 'vitest';
 import useDebounce from './useDebounce';
 
 describe('useDebounce', () => {
@@ -10,10 +10,7 @@ describe('useDebounce', () => {
 
   it('should debounce the value after the specified delay', async () => {
     vi.useFakeTimers();
-    const { result, rerender } = renderHook(
-      ({ value, delay }) => useDebounce(value, delay),
-      { initialProps: { value: 'initial', delay: 500 } }
-    );
+    const { result, rerender } = renderHook(({ value, delay }) => useDebounce(value, delay), { initialProps: { value: 'initial', delay: 500 } });
 
     expect(result.current).toBe('initial');
 
@@ -40,10 +37,7 @@ describe('useDebounce', () => {
 
   it('should cancel the previous timer when the value changes rapidly', () => {
     vi.useFakeTimers();
-    const { result, rerender } = renderHook(
-      ({ value, delay }) => useDebounce(value, delay),
-      { initialProps: { value: 'initial', delay: 500 } }
-    );
+    const { result, rerender } = renderHook(({ value, delay }) => useDebounce(value, delay), { initialProps: { value: 'initial', delay: 500 } });
 
     act(() => {
       rerender({ value: 'intermediate', delay: 500 });

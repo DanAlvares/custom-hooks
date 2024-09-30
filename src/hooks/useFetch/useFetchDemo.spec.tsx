@@ -1,7 +1,7 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
-import UseFetchDemo from './useFetchDemo';
+import { vi } from 'vitest';
 import * as useFetchModule from './useFetch';
+import UseFetchDemo from './useFetchDemo';
 
 // Mock the useFetch hook
 vi.mock('./useFetch');
@@ -43,7 +43,6 @@ describe('UseFetchDemo', () => {
     render(<UseFetchDemo />);
 
     await waitFor(() => {
-      expect(screen.getByText('Fetch Demo')).toBeDefined();
       mockData.forEach((post) => {
         expect(screen.getByText(post.title)).toBeDefined();
       });

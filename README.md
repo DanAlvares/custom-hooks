@@ -2,18 +2,15 @@
 
 A collection of custom React hooks. Each with a demo component and fully tested
 
-# Custom React Hooks
-
-A collection of custom React hooks, each with a demo component and fully tested.
-
 ## Table of Contents
 
 1. [Introduction](#introduction)
 2. [Installation](#installation)
 3. [Available Hooks](#available-hooks)
+   - [useBeforeUnload](#usebeforeunload)
    - [useClickOutside](#useclickoutside)
+   - [useDebounce](#useDebounce)
    - [useFetch](#usefetch)
-   - [useLocalStorage](#uselocalstorage)
    - [useLocalStorage](#uselocalstorage)
 4. [Usage](#usage)
 5. [Running the Project](#running-the-project)
@@ -35,14 +32,14 @@ npm install
 
 ## Available Hooks
 
-### useLocalStorage
+### useBeforeUnload
 
-The `useLocalStorage` hook provides a way to easily store and retrieve data from the browser's localStorage. It works similarly to the `useState` hook but persists the data in localStorage.
+The `useBeforeUnload` hook allows you to show a warning dialog when the user tries to close or refresh the page. This is useful for preventing accidental data loss when a user has unsaved changes.
 
 #### Usage:
 
 ```typescript
-const [value, setValue] = useLocalStorage<T>(key: string, initialValue: T)
+useBeforeUnload(handler: (event: BeforeUnloadEvent) => void)
 ```
 
 ### useClickOutside
@@ -63,6 +60,16 @@ The `useFetch` hook provides a simple way to fetch data from an API. It handles 
 
 ```typescript
 const { data, loading, error } = useFetch<T>(url: string)
+```
+
+### useLocalStorage
+
+The `useLocalStorage` hook provides a way to easily store and retrieve data from the browser's localStorage. It works similarly to the `useState` hook but persists the data in localStorage.
+
+#### Usage:
+
+```typescript
+const [value, setValue] = useLocalStorage<T>(key: string, initialValue: T)
 ```
 
 ## Usage

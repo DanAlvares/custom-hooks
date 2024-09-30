@@ -12,7 +12,6 @@ const UseDebounceDemo: React.FC = () => {
 
   return (
     <div>
-      <h2>Debounce Demo</h2>
       <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Type something..." />
       <p>Input value: {inputValue}</p>
       <p>Debounced value: {debouncedValue}</p>

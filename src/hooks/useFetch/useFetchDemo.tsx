@@ -14,7 +14,6 @@ const UseFetchDemo: React.FC = () => {
 
   return (
     <div>
-      <h2>Fetch Demo</h2>
       <ul>
         {data?.slice(0, 5).map((post) => (
           <li key={post.id}>{post.title}</li>

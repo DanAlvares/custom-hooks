@@ -1,5 +1,5 @@
 import { render, fireEvent, screen, act } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { vi } from 'vitest';
 import UseDebounceDemo from './useDebounceDemo';
 
 describe('UseDebounceDemo', () => {

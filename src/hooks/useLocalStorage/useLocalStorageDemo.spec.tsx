@@ -1,5 +1,4 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, beforeEach } from 'vitest';
 import LocalStorageDemo from './useLocalStorageDemo';
 
 describe('LocalStorageDemo', () => {
