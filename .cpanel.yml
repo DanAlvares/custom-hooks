@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/username/public_html/custom
+    - export DEPLOYPATH=/home/codebla2/public_html/custom
     - /bin/cp -R * $DEPLOYPATH
